@@ -71,3 +71,9 @@ button[name=next], .choice, .same {
   border-bottom: 3px solid rgb(16,108,200);
 
 }
+
+#links {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
