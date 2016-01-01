@@ -17,14 +17,17 @@ module.controller('List', ($scope, $rootScope, $location) => {
       console.log(arr);
       return asyncSort(arr, (a, b, cb) => {
         $scope.select = { a, b }
+        $scope.sameString = 'I Like them the same'
         $scope.$apply()
-        console.log("test")
         console.log($scope.select)
         $scope.chooseA = () => {
           $scope.selected = a;
         }
         $scope.chooseB = () => {
           $scope.selected = b;
+        }
+        $scope.chooseSame = () => {
+          $scope.selected = $scope.sameString;
         }
 
         const watchCb = () => {
@@ -42,6 +45,9 @@ module.controller('List', ($scope, $rootScope, $location) => {
           }
           if (sel === b) {
             return cb(null, 1)
+          }
+          if (sel === $scope.sameString) {
+            return cb(null, 0)
           }
         }
 

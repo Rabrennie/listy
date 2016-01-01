@@ -29,14 +29,17 @@ _module3.default.controller('List', function ($scope, $rootScope, $location) {
       console.log(arr);
       return asyncSort(arr, function (a, b, cb) {
         $scope.select = { a: a, b: b };
+        $scope.sameString = 'I Like them the same';
         $scope.$apply();
-        console.log("test");
         console.log($scope.select);
         $scope.chooseA = function () {
           $scope.selected = a;
         };
         $scope.chooseB = function () {
           $scope.selected = b;
+        };
+        $scope.chooseSame = function () {
+          $scope.selected = $scope.sameString;
         };
 
         var watchCb = function watchCb() {
@@ -54,6 +57,9 @@ _module3.default.controller('List', function ($scope, $rootScope, $location) {
           }
           if (sel === b) {
             return cb(null, 1);
+          }
+          if (sel === $scope.sameString) {
+            return cb(null, 0);
           }
         };
 

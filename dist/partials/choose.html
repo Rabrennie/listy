@@ -1,4 +1,8 @@
-<h1>{{list}}</h1>
-<h1>{{select}}</h1>
-<button type="button" name="a" ng-click="chooseA()">{{select.a}}</button>
-<button type="button" name="b" ng-click="chooseB()">{{select.b}}</button>
+<div class="container">
+  <p>Choose one</p>
+  <div class="buttons">
+    <button class="choice" type="button" name="a" ng-click="chooseA()">{{select.a}}</button>
+    <button class="choice" type="button" name="b" ng-click="chooseB()">{{select.b}}</button>
+  </div>
+  <button class="same" type="button" name="same" ng-click="chooseSame()">{{sameString}}</button>
+</div>
