@@ -1,3 +1,11 @@
-<ul>
-  <li ng-repeat = "result in results track by $index">{{$index+1}} {{result}}</li>
-</ul>
+
+<div class="container">
+  <p>Results</p>
+  <div class="results">
+    <div class="result" ng-repeat = "result in results track by $index">
+      <span>{{$index+1}}</span>
+      <span>{{result}}</span>
+    </div>
+  </div>
+
+</div>
