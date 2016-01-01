@@ -11,8 +11,7 @@
     "commonjs": true
   },
   "globals": {
-    "PIXI": true,
-    "p2": true
+    "angular": true
   },
   "rules": {
     "semi": 0,
