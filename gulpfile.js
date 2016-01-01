@@ -11,8 +11,6 @@ var watchify          = require('watchify');
 var exorcist          = require('exorcist');
 var browserify        = require('browserify');
 var browserSync       = require('browser-sync').create();
-var pkg               = require('./package.json');
-var _                 = require('lodash');
 
 function bundle(shouldWatch) {
   // Input file.
@@ -68,6 +66,12 @@ function buildHTML(shouldWatch) {
     .pipe(gulp.dest('dist'));
 }
 
+function buildPartials(shouldWatch) {
+  return gulp.src('app/partials/*.html')
+    .pipe(shouldWatch ? watch('app/partials/*.html') : gutil.noop())
+    .pipe(gulp.dest('dist/partials/'));
+}
+
 gulp.task('clean', function() {
   return del(['dist', 'release']);
 })
@@ -80,11 +84,15 @@ gulp.task('watch:html', function() {
   return buildHTML(true);
 });
 
+gulp.task('watch:partials', function() {
+  return buildPartials(true);
+});
+
 gulp.task('watch:js', function() {
   return bundle(true);
 });
 
-gulp.task('watch:all', ['watch:css', 'watch:html', 'watch:js']);
+gulp.task('watch:all', ['watch:css', 'watch:html', 'watch:js', 'watch:partials']);
 
 gulp.task('build:css', function() {
   return buildCSS(false);

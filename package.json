@@ -7,7 +7,7 @@
   "scripts": {
     "test": "npm run lint",
     "lint": "eslint app/**/*.js app/**/**/*.js gulpfile.js",
-    "format": "eslint --fix app/**/*.js app/**/**/*.js",
+    "format": "eslint --fix app/**/*.js app/**/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Rabrennie/listy#readme",
   "dependencies": {
+    "async-merge-sort": "^0.1.3",
+    "q": "^1.4.1",
     "random-js": "^1.0.8"
   },
   "devDependencies": {
