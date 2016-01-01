@@ -1,3 +1,7 @@
-<textarea name="list" rows="8" cols="40" ng-model="list"></textarea>
-<h1>{{list}}</h1>
-<button type="button" name="next" ng-click="chooseStep()">Next</button>
+<div class="container">
+  <p>Enter your list, items seperated by new lines</p>
+  <textarea name="list" rows="8" cols="40" placeholder="Enter your list here..." ng-model="list"></textarea>
+  <div class="buttons">
+    <button type="button" name="next" ng-click="chooseStep()">Next</button>
+  </div>
+</div>
