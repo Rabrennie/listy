@@ -45,3 +45,29 @@ button[name=next], .choice, .same {
 .same {
   width:460px;
 }
+
+.results {
+  width:400px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+.result {
+  display: flex;
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.result span{
+  display: inline-block;
+  width:200px;
+  padding:10px 30px;
+}
+
+.result span:first-child{
+  border-right: 1px solid #F5F5F5;
+}
+
+.results .result:last-child{
+  border-bottom: 3px solid rgb(16,108,200);
+
+}
